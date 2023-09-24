@@ -21,6 +21,11 @@ pipeline{
 				echo "we are on pipeline as code module"
 			}
 		}
+		stage('5-notify'){
+			steps{
+				echo "first pipeline as code module is completed"
+			}
+		}
 	} 
 
 }
