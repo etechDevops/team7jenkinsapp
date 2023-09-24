@@ -21,6 +21,11 @@ pipeline{
 				echo "we are on pipeline as code module"
 			}
 		}
+		stage('5-security_check'){
+			steps{
+				sh 'bash -x /var/lib/jenkins/workspace/team7-pipeline-demo1/pipeline.sh'
+			}
+		}
 	} 
 
 }
