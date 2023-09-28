@@ -11,6 +11,7 @@ pipeline{
 				sh 'df -h'
 			}
 		}
+        parallel{
 		stage('3-unitest'){
 			steps{
 				sh 'lscpu'
@@ -20,6 +21,7 @@ pipeline{
 			steps{
 				echo "we are on pipeline as code module"
 			}
+		}
 		}
 		stage('5-security_check'){
 			steps{
