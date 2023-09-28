@@ -31,9 +31,6 @@ pipeline{
 		}
 		}
 		stage('5-security_check'){
-			agent{
-				label 'slave1'
-			}
 			steps{
 				sh 'bash -x /var/lib/jenkins/workspace/team7-pipeline-demo1/pipeline.sh'
 			}
