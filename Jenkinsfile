@@ -1,5 +1,7 @@
 pipeline{
-	agent any
+	agent {
+		label 'slave1'
+	}
 	stages{
 		stage('1-clonecode'){
 			steps{
@@ -19,6 +21,9 @@ pipeline{
 			}
 		}
 		stage('4-deploy'){
+			agent{
+				label 'slave2'
+			}
 			steps{
 				echo "we are on pipeline as code module"
 			}
@@ -26,6 +31,9 @@ pipeline{
 		}
 		}
 		stage('5-security_check'){
+			agent{
+				label 'slave1'
+			}
 			steps{
 				sh 'bash -x /var/lib/jenkins/workspace/team7-pipeline-demo1/pipeline.sh'
 			}
