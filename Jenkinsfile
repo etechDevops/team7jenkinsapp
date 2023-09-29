@@ -35,6 +35,10 @@ pipeline{
 				echo "end of the session"
 			}
 		}
+		stage('6-sonarqube'){
+			steps{
+				sh 'uname -a'			}
+		}
 	} 
 
 }
